@@ -203,7 +203,7 @@ class IBANValidator:
 
             if self.validation_countries[country_code] != len(value):
                 raise ValidationError(
-                    _('%(country_code)s IBANs must contain %(number)s characters.'),
+                    _('IBAN must contain %(number)s characters.'),
                     code='invalid',
                     params={'country_code': country_code, 'number': self.validation_countries[country_code]},
                 )

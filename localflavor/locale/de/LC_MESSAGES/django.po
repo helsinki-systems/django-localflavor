@@ -4033,19 +4033,23 @@ msgstr ""
 
 #, python-format
 msgid "%(character)s is not a valid character for IBAN."
-msgstr ""
+msgstr "%(character)s sind keine gültigen Zeichen für eine IBAN."
 
 #, python-format
 msgid "%(country_code)s IBANs must contain %(number)s characters."
-msgstr "%(country_code)s-IBAN müssen %(number)s Zeichen enthalten."
+msgstr "%(country_code)s IBANs müssen %(number)s Zeichen enthalten."
+
+#, python-format
+msgid "IBAN must contain %(number)s characters."
+msgstr "IBAN muss %(number)s Zeichen enthalten."
 
 #, python-format
 msgid "%(country_code)s is not a valid country code for IBAN."
-msgstr ""
+msgstr "%(country_code)s ist kein gültier Code für eine IBAN."
 
 #, python-format
 msgid "%(country_code)s IBANs are not allowed in this field."
-msgstr ""
+msgstr "%(country_code)s IBANs sind nicht erlaubt."
 
 msgid "Not a valid IBAN."
 msgstr "Ungültige IBAN."
@@ -4073,7 +4077,7 @@ msgstr "Kein gültiger EAN-Code."
 
 #, python-format
 msgid "%(vatin)s is not a valid VAT identification number."
-msgstr ""
+msgstr "%(vatin)s ist keine gültige Umsatzsteuer-Identifikationsnummer."
 
 msgid "Ahafo"
 msgstr ""
@@ -4706,7 +4710,7 @@ msgid "Enter a valid Tax code."
 msgstr ""
 
 msgid "Enter a valid VAT number."
-msgstr "Bitte eine gültige Umsatzsteuernummer eingeben."
+msgstr "Bitte eine gültige Umsatzsteuer-Identifikationsnummer eingeben."
 
 msgid "Check digit does not match."
 msgstr "Prüfziffer stimmt nicht überein."
