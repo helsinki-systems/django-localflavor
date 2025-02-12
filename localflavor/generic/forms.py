@@ -83,6 +83,7 @@ class IBANFormField(forms.CharField):
         # kwargs.setdefault('min_length', IBAN_MIN_LENGTH)
         kwargs.setdefault('max_length', 34)
         self.default_validators = [IBANValidator(use_nordea_extensions, include_countries)]
+        self.__include_countries = include_countries or []
         super().__init__(**kwargs)
 
     def to_python(self, value):
@@ -97,6 +98,22 @@ class IBANFormField(forms.CharField):
             return value
         grouping = 4
         value = value.upper().replace(' ', '').replace('-', '')
+        if "AT" in self.__include_countries and len(self.__include_countries) == 1:
+            o = []
+            i = 0
+            g = 0
+            grouping = [4, 5]
+            while i < len(value):
+                if g < len(grouping):
+                    r = min(i + grouping[g], len(value))
+                else:
+                    r = len(value)
+                o.append(value[i:r])
+                i = r
+                g += 1
+
+            return ' '.join(o)
+
         return ' '.join(value[i:i + grouping] for i in range(0, len(value), grouping))
 
 
