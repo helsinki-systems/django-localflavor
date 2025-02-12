@@ -80,7 +80,7 @@ class IBANFormField(forms.CharField):
     """
 
     def __init__(self, use_nordea_extensions=False, include_countries=None, **kwargs):
-        kwargs.setdefault('min_length', IBAN_MIN_LENGTH)
+        # kwargs.setdefault('min_length', IBAN_MIN_LENGTH)
         kwargs.setdefault('max_length', 34)
         self.default_validators = [IBANValidator(use_nordea_extensions, include_countries)]
         super().__init__(**kwargs)

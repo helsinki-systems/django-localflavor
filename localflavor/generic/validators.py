@@ -377,6 +377,14 @@ class VATINValidator:
 
     def __call__(self, value):
         country_code, number = self.clean(value)
+
+        if country_code == "AT" and len(value) != (8 + 3):
+            raise ValidationError(
+                _('VAT must contain %(number)s characters.'),
+                code='invalid',
+                params={'number': 8},
+            )
+
         try:
             match = re.match(VATIN_PATTERN_MAP[country_code], value)
             if not match:

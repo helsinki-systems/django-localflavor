@@ -4044,6 +4044,10 @@ msgid "IBAN must contain %(number)s characters."
 msgstr "IBAN muss %(number)s Zeichen enthalten."
 
 #, python-format
+msgid "VAT must contain %(number)s characters."
+msgstr "Umsatzsteuer-Identifikationsnummer muss %(number)s Nummern enthalten."
+
+#, python-format
 msgid "%(country_code)s is not a valid country code for IBAN."
 msgstr "%(country_code)s ist kein gültier Code für eine IBAN."
 
